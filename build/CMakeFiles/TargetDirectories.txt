@@ -1,0 +1,3 @@
+/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles/cpp_modern_techniques.dir
+/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles/edit_cache.dir
+/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles/rebuild_cache.dir
