@@ -1,0 +1,354 @@
+{
+  "cpp_modern_features": {
+    "metadata": {
+      "title": "Modern C++ Features Overview",
+      "description": "Comprehensive guide to modern C++ features from C++17 to C++23",
+      "last_updated": "2024",
+      "total_features": 10
+    },
+    "cpp17_features": {
+      "version": "C++17",
+      "release_year": 2017,
+      "key_improvements": "Simplified syntax, better type deduction, enhanced standard library",
+      "features": [
+        {
+          "id": "structured_bindings",
+          "name": "Structured Bindings",
+          "category": "Language Core",
+          "complexity_level": "Beginner",
+          "definition": "Allows unpacking the components of a tuple, pair, array, or struct into separate variables in a single statement.",
+          "primary_use_cases": [
+            "Unpacking multiple return values",
+            "Iterating over key-value containers",
+            "Destructuring structured data",
+            "Improving code readability"
+          ],
+          "syntax": {
+            "basic": "auto [a, b, c] = expression;",
+            "const": "const auto [a, b, c] = expression;",
+            "reference": "auto& [a, b, c] = expression;"
+          },
+          "practical_examples": {
+            "with_pair": {
+              "description": "Unpacking std::pair from function return",
+              "code": "std::pair<int, std::string> getPerson() {\n    return {25, \"John\"};\n}\nauto [age, name] = getPerson();"
+            },
+            "with_map": {
+              "description": "Iterating through std::map with structured bindings",
+              "code": "std::map<std::string, int> scores = {{\"Alice\", 95}, {\"Bob\", 87}};\nfor (const auto& [name, score] : scores) {\n    std::cout << name << \": \" << score << std::endl;\n}"
+            },
+            "with_struct": {
+              "description": "Destructuring custom struct",
+              "code": "struct Point { int x, y; };\nPoint p{10, 20};\nauto [x, y] = p;"
+            }
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <map>\n#include <tuple>\n\n// With std::pair\nstd::pair<int, std::string> getPerson() {\n    return {25, \"John\"};\n}\n\n// With struct\nstruct Point {\n    int x, y;\n};\n\nint main() {\n    // Structured binding with pair\n    auto [age, name] = getPerson();\n    std::cout << \"Age: \" << age << \", Name: \" << name << std::endl;\n    \n    // With map iteration\n    std::map<std::string, int> scores = {{\"Alice\", 95}, {\"Bob\", 87}};\n    for (const auto& [name, score] : scores) {\n        std::cout << name << \": \" << score << std::endl;\n    }\n    \n    // With struct\n    Point p{10, 20};\n    auto [x, y] = p;\n    std::cout << \"Point: (\" << x << \", \" << y << \")\" << std::endl;\n    \n    return 0;\n}",
+            "expected_output": "Age: 25, Name: John\nAlice: 95\nBob: 87\nPoint: (10, 20)"
+          },
+          "best_practices": [
+            "Use meaningful variable names when unpacking",
+            "Prefer const auto when values won't be modified",
+            "Combine with range-based for loops for container iteration"
+          ],
+          "compatibility": {
+            "compiler_support": "GCC 7+, Clang 4+, MSVC 2017+",
+            "standard_required": "C++17"
+          }
+        },
+        {
+          "id": "if_constexpr",
+          "name": "if constexpr",
+          "category": "Template Metaprogramming",
+          "complexity_level": "Intermediate",
+          "definition": "A compile-time conditional that allows different code paths to be instantiated based on compile-time conditions, replacing complex SFINAE patterns with readable syntax.",
+          "primary_use_cases": [
+            "Compile-time branching in templates",
+            "Type-based algorithm selection",
+            "Simplifying template specialization",
+            "Creating generic code with type-specific behavior"
+          ],
+          "syntax": {
+            "basic": "if constexpr (condition) { /* ... */ }",
+            "with_else": "if constexpr (condition) { /* ... */ } else { /* ... */ }",
+            "chained": "if constexpr (cond1) { /* ... */ } else if constexpr (cond2) { /* ... */ }"
+          },
+          "key_advantages": [
+            "Only the true branch is compiled",
+            "Replaces complex SFINAE patterns",
+            "Improves template error messages",
+            "Enables cleaner generic programming"
+          ],
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <type_traits>\n#include <vector>\n#include <string>\n\ntemplate<typename T>\nvoid processData(const T& data) {\n    if constexpr (std::is_integral_v<T>) {\n        std::cout << \"Processing integer: \" << data * 2 << std::endl;\n    } else if constexpr (std::is_floating_point_v<T>) {\n        std::cout << \"Processing float: \" << data * 1.5 << std::endl;\n    } else if constexpr (std::is_same_v<T, std::string>) {\n        std::cout << \"Processing string: \" << data + \" (processed)\" << std::endl;\n    } else {\n        std::cout << \"Unknown type processing\" << std::endl;\n    }\n}\n\ntemplate<int N>\nconstexpr int factorial() {\n    if constexpr (N <= 1) {\n        return 1;\n    } else {\n        return N * factorial<N-1>();\n    }\n}\n\nint main() {\n    processData(42);           // Integer processing\n    processData(3.14);         // Float processing\n    processData(std::string(\"Hello\")); // String processing\n    \n    constexpr int fact5 = factorial<5>();\n    std::cout << \"5! = \" << fact5 << std::endl;\n    \n    return 0;\n}",
+            "expected_output": "Processing integer: 84\nProcessing float: 4.71\nProcessing string: Hello (processed)\n5! = 120"
+          },
+          "comparison_with_alternatives": {
+            "vs_sfinae": "Much more readable than SFINAE techniques",
+            "vs_specialization": "Avoids need for multiple template specializations",
+            "vs_runtime_if": "Evaluated at compile-time, no runtime overhead"
+          }
+        },
+        {
+          "id": "std_variant",
+          "name": "std::variant",
+          "category": "Standard Library",
+          "complexity_level": "Intermediate",
+          "definition": "A type-safe union that can hold one of several types, but only one at a time.",
+          "primary_use_cases": [
+            "Replacing unsafe C-style unions",
+            "Storing values of different types safely",
+            "Implementing JSON-like data structures",
+            "State machines and tagged unions"
+          ],
+          "key_operations": {
+            "access": "std::get<T>(variant) or std::get<index>(variant)",
+            "visit": "std::visit(visitor, variant)",
+            "check": "std::holds_alternative<T>(variant)",
+            "assign": "variant = value;"
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <variant>\n#include <string>\n#include <vector>\n\n// Variant for different types\nusing Value = std::variant<int, double, std::string, bool>;\n\n// Visitor pattern with variant\nstruct ValuePrinter {\n    void operator()(int i) const {\n        std::cout << \"Integer: \" << i << std::endl;\n    }\n    void operator()(double d) const {\n        std::cout << \"Double: \" << d << std::endl;\n    }\n    void operator()(const std::string& s) const {\n        std::cout << \"String: \" << s << std::endl;\n    }\n    void operator()(bool b) const {\n        std::cout << \"Boolean: \" << (b ? \"true\" : \"false\") << std::endl;\n    }\n};\n\nint main() {\n    std::vector<Value> values = {42, 3.14, std::string(\"Hello\"), true};\n    \n    for (const auto& value : values) {\n        std::visit(ValuePrinter{}, value);\n    }\n    \n    Value v = 42;\n    if (std::holds_alternative<int>(v)) {\n        std::cout << \"Contains int: \" << std::get<int>(v) << std::endl;\n    }\n    \n    return 0;\n}",
+            "expected_output": "Integer: 42\nDouble: 3.14\nString: Hello\nBoolean: true\nContains int: 42"
+          },
+          "safety_features": [
+            "Type-safe access with std::get",
+            "Exception thrown on wrong type access",
+            "Compile-time type checking with std::holds_alternative"
+          ]
+        }
+      ]
+    },
+    "cpp20_features": {
+      "version": "C++20",
+      "release_year": 2020,
+      "key_improvements": "Concepts, Coroutines, Ranges, improved template system",
+      "features": [
+        {
+          "id": "concepts",
+          "name": "Concepts",
+          "category": "Template System",
+          "complexity_level": "Advanced",
+          "definition": "Allows defining constraints for template parameters in a clear and expressive way.",
+          "primary_use_cases": [
+            "Constraining template parameters",
+            "Improving template error messages",
+            "Self-documenting generic code",
+            "Replacing SFINAE patterns"
+          ],
+          "syntax": {
+            "definition": "template<typename T> concept ConceptName = requirement;",
+            "usage": "template<ConceptName T> void func(T t);",
+            "inline": "void func(ConceptName auto t);"
+          },
+          "common_concepts": {
+            "standard_library": [
+              "std::integral<T>",
+              "std::floating_point<T>",
+              "std::convertible_to<T, U>",
+              "std::same_as<T, U>"
+            ],
+            "custom_examples": [
+              "Addable<T>",
+              "Printable<T>",
+              "Container<T>"
+            ]
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <concepts>\n#include <type_traits>\n#include <vector>\n#include <string>\n\n// Basic concepts\ntemplate<typename T>\nconcept Integral = std::is_integral_v<T>;\n\ntemplate<typename T>\nconcept FloatingPoint = std::is_floating_point_v<T>;\n\ntemplate<typename T>\nconcept Numeric = Integral<T> || FloatingPoint<T>;\n\n// Function using concept constraint\ntemplate<Numeric T>\nT add(T a, T b) {\n    return a + b;\n}\n\n// Alternative syntax\nvoid print(std::integral auto value) {\n    std::cout << \"Integer value: \" << value << std::endl;\n}\n\nint main() {\n    std::cout << add(5, 3) << std::endl;        // Works with int\n    std::cout << add(2.5, 1.5) << std::endl;    // Works with double\n    \n    print(42);  // Works with integral types\n    // print(3.14);  // Compile error - not integral\n    \n    return 0;\n}",
+            "expected_output": "8\n4\nInteger value: 42"
+          },
+          "benefits": [
+            "Clear error messages",
+            "Self-documenting code",
+            "Better template overload resolution",
+            "Easier generic programming"
+          ]
+        },
+        {
+          "id": "coroutines",
+          "name": "Coroutines",
+          "category": "Asynchronous Programming",
+          "complexity_level": "Expert",
+          "definition": "Allows writing asynchronous code in a natural way, supporting pausing and resuming execution, generators, and async tasks.",
+          "key_keywords": {
+            "co_await": "Suspends execution until awaitable is ready",
+            "co_yield": "Yields a value and suspends (generators)",
+            "co_return": "Returns from coroutine"
+          },
+          "common_patterns": {
+            "generator": "For producing sequences of values lazily",
+            "task": "For asynchronous operations",
+            "async_generator": "For asynchronous data streams"
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <coroutine>\n#include <optional>\n#include <thread>\n#include <chrono>\n\n// Generator coroutine\ntemplate<typename T>\nstruct Generator {\n    struct promise_type {\n        T value;\n        Generator get_return_object() {\n            return Generator{std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::suspend_always initial_suspend() { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        std::suspend_always yield_value(T val) {\n            value = val;\n            return {};\n        }\n        void return_void() {}\n        void unhandled_exception() {}\n    };\n    \n    std::coroutine_handle<promise_type> h;\n    explicit Generator(std::coroutine_handle<promise_type> handle) : h(handle) {}\n    ~Generator() { if (h) h.destroy(); }\n    \n    struct iterator {\n        std::coroutine_handle<promise_type> h;\n        iterator& operator++() { h.resume(); return *this; }\n        T operator*() const { return h.promise().value; }\n        bool operator!=(const iterator& other) const { return h != other.h; }\n    };\n    \n    iterator begin() { h.resume(); return iterator{h}; }\n    iterator end() { return iterator{nullptr}; }\n};\n\n// Simple generator function\nGenerator<int> fibonacci() {\n    int a = 0, b = 1;\n    while (true) {\n        co_yield a;\n        auto temp = a;\n        a = b;\n        b += temp;\n    }\n}\n\nGenerator<int> range(int start, int end) {\n    for (int i = start; i < end; ++i) {\n        co_yield i;\n    }\n}\n\nint main() {\n    std::cout << \"Fibonacci sequence (first 10):\" << std::endl;\n    int count = 0;\n    for (auto fib : fibonacci()) {\n        if (count >= 10) break;\n        std::cout << fib << \" \";\n        ++count;\n    }\n    std::cout << std::endl;\n    \n    std::cout << \"Range 5-10:\" << std::endl;\n    for (auto i : range(5, 10)) {\n        std::cout << i << \" \";\n    }\n    std::cout << std::endl;\n    \n    return 0;\n}",
+            "expected_output": "Fibonacci sequence (first 10):\n0 1 1 2 3 5 8 13 21 34\nRange 5-10:\n5 6 7 8 9"
+          },
+          "use_cases": [
+            "Lazy evaluation and generators",
+            "Asynchronous I/O operations",
+            "State machines",
+            "Cooperative multitasking"
+          ]
+        },
+        {
+          "id": "ranges",
+          "name": "Ranges",
+          "category": "Standard Library",
+          "complexity_level": "Intermediate",
+          "definition": "Provides a functional programming approach for processing collections, enabling filtering, transforming, and lazy evaluation.",
+          "key_concepts": {
+            "range": "A collection that can be iterated",
+            "view": "A lightweight wrapper that transforms ranges",
+            "pipeline": "Chaining operations using | operator",
+            "lazy_evaluation": "Operations are not executed until iteration"
+          },
+          "common_views": {
+            "filter": "std::views::filter(predicate)",
+            "transform": "std::views::transform(function)",
+            "take": "std::views::take(n)",
+            "drop": "std::views::drop(n)",
+            "reverse": "std::views::reverse",
+            "iota": "std::views::iota(start, end)"
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <vector>\n#include <ranges>\n#include <algorithm>\n#include <string>\n\nint main() {\n    std::vector<int> numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};\n    \n    // Pipeline processing\n    auto result = numbers \n        | std::views::filter([](int n) { return n % 2 == 0; })  // Even numbers\n        | std::views::transform([](int n) { return n * n; })     // Square\n        | std::views::take(3);                                   // Take first 3\n    \n    std::cout << \"Even squares (first 3): \";\n    for (int n : result) {\n        std::cout << n << \" \";\n    }\n    std::cout << std::endl;\n    \n    // String processing\n    std::vector<std::string> words = {\"hello\", \"world\", \"cpp\", \"ranges\", \"awesome\"};\n    auto longWords = words\n        | std::views::filter([](const std::string& s) { return s.length() > 4; })\n        | std::views::transform([](const std::string& s) { \n            std::string upper = s;\n            std::transform(upper.begin(), upper.end(), upper.begin(), ::toupper);\n            return upper;\n        });\n    \n    std::cout << \"Long words (uppercase): \";\n    for (const auto& word : longWords) {\n        std::cout << word << \" \";\n    }\n    std::cout << std::endl;\n    \n    // Infinite range example\n    std::cout << \"Multiples of 3 (first 10): \";\n    auto infiniteRange = std::views::iota(1)\n        | std::views::filter([](int n) { return n % 3 == 0; })\n        | std::views::take(10);\n    \n    for (int n : infiniteRange) {\n        std::cout << n << \" \";\n    }\n    std::cout << std::endl;\n    \n    return 0;\n}",
+            "expected_output": "Even squares (first 3): 4 16 36\nLong words (uppercase): HELLO WORLD RANGES AWESOME\nMultiples of 3 (first 10): 3 6 9 12 15 18 21 24 27 30"
+          },
+          "advantages": [
+            "Lazy evaluation for efficiency",
+            "Composable operations",
+            "Functional programming style",
+            "No intermediate containers needed"
+          ]
+        },
+        {
+          "id": "spaceship_operator",
+          "name": "Spaceship Operator (<=>)",
+          "category": "Language Core",
+          "complexity_level": "Beginner",
+          "definition": "The three-way comparison operator automatically generates all comparison operators (==, !=, <, >, <=, >=) for a class.",
+          "generated_operators": [
+            "operator==",
+            "operator!=",
+            "operator<",
+            "operator<=", 
+            "operator>",
+            "operator>="
+          ],
+          "return_types": {
+            "strong_ordering": "For types with total ordering",
+            "weak_ordering": "For types with partial ordering",
+            "partial_ordering": "For floating-point-like types"
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <compare>\n#include <string>\n#include <vector>\n#include <algorithm>\n\nclass Person {\nprivate:\n    std::string name;\n    int age;\n    \npublic:\n    Person(std::string n, int a) : name(std::move(n)), age(a) {}\n    \n    // Spaceship operator automatically generates ==, !=, <, <=, >, >=\n    auto operator<=>(const Person& other) const {\n        if (auto cmp = age <=> other.age; cmp != 0) {\n            return cmp;\n        }\n        return name <=> other.name;\n    }\n    \n    bool operator==(const Person& other) const = default;\n    \n    const std::string& getName() const { return name; }\n    int getAge() const { return age; }\n};\n\nint main() {\n    std::vector<Person> people = {\n        Person(\"Alice\", 30),\n        Person(\"Bob\", 25),\n        Person(\"Charlie\", 30),\n        Person(\"Alice\", 25)\n    };\n    \n    std::cout << \"Before sorting:\\n\";\n    for (const auto& person : people) {\n        std::cout << person.getName() << \" (\" << person.getAge() << \")\" << std::endl;\n    }\n    \n    std::sort(people.begin(), people.end());\n    \n    std::cout << \"\\nAfter sorting:\\n\";\n    for (const auto& person : people) {\n        std::cout << person.getName() << \" (\" << person.getAge() << \")\" << std::endl;\n    }\n    \n    Person p1(\"John\", 30);\n    Person p2(\"Jane\", 25);\n    \n    std::cout << \"\\nComparisons:\\n\";\n    std::cout << \"p1 == p2: \" << (p1 == p2) << std::endl;\n    std::cout << \"p1 < p2: \" << (p1 < p2) << std::endl;\n    std::cout << \"p1 > p2: \" << (p1 > p2) << std::endl;\n    \n    return 0;\n}",
+            "expected_output": "Before sorting:\nAlice (30)\nBob (25)\nCharlie (30)\nAlice (25)\n\nAfter sorting:\nAlice (25)\nBob (25)\nAlice (30)\nCharlie (30)\n\nComparisons:\np1 == p2: 0\np1 < p2: 0\np1 > p2: 1"
+          },
+          "best_practices": [
+            "Use = default for operator== when possible",
+            "Define custom comparison logic in operator<=>",
+            "Consider the appropriate ordering type"
+          ]
+        }
+      ]
+    },
+    "cpp23_features": {
+      "version": "C++23",
+      "release_year": 2023,
+      "key_improvements": "Deducing this, std::expected, enhanced operators",
+      "features": [
+        {
+          "id": "deducing_this",
+          "name": "Deducing this",
+          "category": "Language Core",
+          "complexity_level": "Advanced",
+          "definition": "Allows template member functions to automatically deduce the type of the object (const, non-const, rvalue, lvalue), making code more generic.",
+          "problem_solved": "Eliminates need for multiple overloads of member functions for different object types",
+          "traditional_approach": {
+            "overloads_needed": 4,
+            "types": [
+              "T& func() &",
+              "const T& func() const &", 
+              "T&& func() &&",
+              "const T&& func() const &&"
+            ]
+          },
+          "modern_approach": {
+            "overloads_needed": 1,
+            "syntax": "template<typename Self> auto&& func(this Self&& self)"
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <string>\n#include <utility>\n\nclass DataProcessor {\nprivate:\n    std::string data;\n    \npublic:\n    DataProcessor(std::string d) : data(std::move(d)) {}\n    \n    // Before C++23 - need 4 overloads\n    // std::string& getData() &;\n    // const std::string& getData() const &;\n    // std::string&& getData() &&;\n    // const std::string&& getData() const &&;\n    \n    // C++23 - only need 1 template function\n    template<typename Self>\n    auto&& getData(this Self&& self) {\n        std::cout << \"getData called on \";\n        if constexpr (std::is_const_v<std::remove_reference_t<Self>>) {\n            std::cout << \"const \";\n        }\n        if constexpr (std::is_rvalue_reference_v<Self&&>) {\n            std::cout << \"rvalue\";\n        } else {\n            std::cout << \"lvalue\";\n        }\n        std::cout << \" object\" << std::endl;\n        return std::forward<Self>(self).data;\n    }\n    \n    // Chaining operations with deducing this\n    template<typename Self>\n    auto&& process(this Self&& self) {\n        std::cout << \"Processing data...\" << std::endl;\n        if constexpr (!std::is_const_v<std::remove_reference_t<Self>>) {\n            self.data += \" (processed)\";\n        }\n        return std::forward<Self>(self);\n    }\n};\n\nint main() {\n    DataProcessor processor(\"Hello World\");\n    auto& data1 = processor.getData();\n    \n    const DataProcessor constProcessor(\"Const Data\");\n    const auto& data2 = constProcessor.getData();\n    \n    auto&& data3 = DataProcessor(\"Temp Data\").getData();\n    \n    DataProcessor(\"Chain Test\").process().getData();\n    \n    return 0;\n}",
+            "expected_output": "getData called on lvalue object\ngetData called on const lvalue object\ngetData called on rvalue object\nProcessing data...\ngetData called on rvalue object"
+          },
+          "benefits": [
+            "Reduces code duplication",
+            "Maintains perfect forwarding",
+            "Simplifies generic member functions",
+            "Improves maintainability"
+          ]
+        },
+        {
+          "id": "std_expected",
+          "name": "std::expected",
+          "category": "Standard Library",
+          "complexity_level": "Intermediate",
+          "definition": "A type that can contain either a success value or an error, replacing exceptions in many cases.",
+          "use_cases": [
+            "Functions that may fail",
+            "Alternative to exceptions",
+            "Error handling without performance overhead",
+            "Functional programming error handling"
+          ],
+          "key_methods": {
+            "has_value": "Check if contains value",
+            "value": "Get the value (throws if error)",
+            "error": "Get the error (throws if value)",
+            "value_or": "Get value or default"
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <expected>\n#include <string>\n#include <fstream>\n\nenum class FileError {\n    NotFound,\n    PermissionDenied,\n    InvalidFormat\n};\n\nstd::string errorToString(FileError error) {\n    switch (error) {\n        case FileError::NotFound: return \"File not found\";\n        case FileError::PermissionDenied: return \"Permission denied\";\n        case FileError::InvalidFormat: return \"Invalid format\";\n        default: return \"Unknown error\";\n    }\n}\n\nstd::expected<std::string, FileError> readFile(const std::string& filename) {\n    if (filename.empty()) {\n        return std::unexpected(FileError::InvalidFormat);\n    }\n    \n    std::ifstream file(filename);\n    if (!file.is_open()) {\n        return std::unexpected(FileError::NotFound);\n    }\n    \n    std::string content;\n    std::string line;\n    while (std::getline(file, line)) {\n        content += line + \"\\n\";\n    }\n    \n    return content;\n}\n\nstd::expected<int, std::string> divide(int a, int b) {\n    if (b == 0) {\n        return std::unexpected(\"Division by zero\");\n    }\n    return a / b;\n}\n\nint main() {\n    // File reading example\n    auto result = readFile(\"test.txt\");\n    if (result) {\n        std::cout << \"File content: \" << *result << std::endl;\n    } else {\n        std::cout << \"Error: \" << errorToString(result.error()) << std::endl;\n    }\n    \n    // Division example\n    auto divResult = divide(10, 2);\n    if (divResult) {\n        std::cout << \"Result: \" << *divResult << std::endl;\n    } else {\n        std::cout << \"Error: \" << divResult.error() << std::endl;\n    }\n    \n    auto divError = divide(10, 0);\n    std::cout << \"Division result: \" << divError.value_or(-1) << std::endl;\n    \n    return 0;\n}",
+            "expected_output": "Error: File not found\nResult: 5\nDivision result: -1"
+          },
+          "advantages": [
+            "No exception overhead",
+            "Explicit error handling",
+            "Composable with monadic operations",
+            "Clear success/failure semantics"
+          ]
+        },
+        {
+          "id": "multidimensional_subscript",
+          "name": "Multidimensional subscript operator",
+          "category": "Language Core",
+          "complexity_level": "Beginner",
+          "definition": "Allows using multiple indices in the operator[] for classes, convenient for multi-dimensional array manipulation.",
+          "traditional_approach": "Before C++23, accessing multi-dimensional arrays required nested subscript operators (matrix[i][j]) or computed index (matrix[i * cols + j]).",
+          "use_cases": [
+            "Multi-dimensional arrays and matrices",
+            "Image processing (width, height, channels)",
+            "3D graphics and game development",
+            "Scientific computing with tensors"
+          ],
+          "key_methods": {
+            "operator[]": "Now accepts multiple parameters separated by commas",
+            "const operator[]": "Const version for read-only access",
+            "bounds_checking": "Can implement custom bounds checking"
+          },
+          "complete_demo": {
+            "code": "#include <iostream>\n#include <vector>\n#include <stdexcept>\n\ntemplate<typename T>\nclass Matrix2D {\nprivate:\n    std::vector<T> data;\n    size_t rows, cols;\n\npublic:\n    Matrix2D(size_t r, size_t c) : rows(r), cols(c), data(r * c) {}\n    \n    // C++23 multidimensional subscript operator\n    T& operator[](size_t row, size_t col) {\n        if (row >= rows || col >= cols) {\n            throw std::out_of_range(\"Index out of bounds\");\n        }\n        return data[row * cols + col];\n    }\n    \n    const T& operator[](size_t row, size_t col) const {\n        if (row >= rows || col >= cols) {\n            throw std::out_of_range(\"Index out of bounds\");\n        }\n        return data[row * cols + col];\n    }\n};\n\nclass Image {\nprivate:\n    std::vector<unsigned char> pixels;\n    size_t width, height, channels;\n\npublic:\n    Image(size_t w, size_t h, size_t c = 3) \n        : width(w), height(h), channels(c), pixels(w * h * c) {}\n    \n    // Access pixel: image[x, y, channel]\n    unsigned char& operator[](size_t x, size_t y, size_t channel = 0) {\n        return pixels[(y * width + x) * channels + channel];\n    }\n    \n    const unsigned char& operator[](size_t x, size_t y, size_t channel = 0) const {\n        return pixels[(y * width + x) * channels + channel];\n    }\n};\n\nint main() {\n    // Matrix example\n    Matrix2D<int> matrix(3, 3);\n    \n    // Fill with values using new syntax\n    for (size_t i = 0; i < 3; ++i) {\n        for (size_t j = 0; j < 3; ++j) {\n            matrix[i, j] = i * 3 + j + 1;  // C++23 syntax\n        }\n    }\n    \n    // Display matrix\n    std::cout << \"Matrix contents:\\n\";\n    for (size_t i = 0; i < 3; ++i) {\n        for (size_t j = 0; j < 3; ++j) {\n            std::cout << matrix[i, j] << \" \";\n        }\n        std::cout << \"\\n\";\n    }\n    \n    // Image example\n    Image img(2, 2, 3);  // 2x2 RGB image\n    \n    // Set pixel colors\n    img[0, 0, 0] = 255;  // Red channel\n    img[0, 0, 1] = 0;    // Green channel\n    img[0, 0, 2] = 0;    // Blue channel\n    \n    std::cout << \"\\nPixel[0,0] RGB: \" \n              << (int)img[0, 0, 0] << \", \" \n              << (int)img[0, 0, 1] << \", \" \n              << (int)img[0, 0, 2] << \"\\n\";\n    \n    return 0;\n}",
+            "expected_output": "Matrix contents:\n1 2 3 \n4 5 6 \n7 8 9 \n\nPixel[0,0] RGB: 255, 0, 0"
+          },
+          "advantages": [
+            "More intuitive syntax for multi-dimensional access",
+            "Cleaner code compared to nested operators",
+            "Better performance than function calls",
+            "Consistent with mathematical notation"
+          ]
+        }
+      ]
+    }
+  }
+}

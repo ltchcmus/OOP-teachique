@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lethanhcong/Desktop/Code/Project
+CMAKE_SOURCE_DIR = /home/lethanhcong/Desktop/Code/OOP-teachique
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lethanhcong/Desktop/Code/Project/build
+CMAKE_BINARY_DIR = /home/lethanhcong/Desktop/Code/OOP-teachique/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lethanhcong/Desktop/Code/Project/build/CMakeFiles /home/lethanhcong/Desktop/Code/Project/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles /home/lethanhcong/Desktop/Code/OOP-teachique/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lethanhcong/Desktop/Code/Project/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,125 +153,77 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/menu/Menu.o: src/menu/Menu.cpp.o
-.PHONY : src/menu/Menu.o
+src/technique/Impl/Menu.o: src/technique/Impl/Menu.cpp.o
+.PHONY : src/technique/Impl/Menu.o
 
 # target to build an object file
-src/menu/Menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o
-.PHONY : src/menu/Menu.cpp.o
+src/technique/Impl/Menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o
+.PHONY : src/technique/Impl/Menu.cpp.o
 
-src/menu/Menu.i: src/menu/Menu.cpp.i
-.PHONY : src/menu/Menu.i
+src/technique/Impl/Menu.i: src/technique/Impl/Menu.cpp.i
+.PHONY : src/technique/Impl/Menu.i
 
 # target to preprocess a source file
-src/menu/Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.i
-.PHONY : src/menu/Menu.cpp.i
+src/technique/Impl/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.i
+.PHONY : src/technique/Impl/Menu.cpp.i
 
-src/menu/Menu.s: src/menu/Menu.cpp.s
-.PHONY : src/menu/Menu.s
+src/technique/Impl/Menu.s: src/technique/Impl/Menu.cpp.s
+.PHONY : src/technique/Impl/Menu.s
 
 # target to generate assembly for a file
-src/menu/Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.s
-.PHONY : src/menu/Menu.cpp.s
+src/technique/Impl/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.s
+.PHONY : src/technique/Impl/Menu.cpp.s
 
-src/technique/IfConstexpr.o: src/technique/IfConstexpr.cpp.o
-.PHONY : src/technique/IfConstexpr.o
+src/technique/Impl/Technique.o: src/technique/Impl/Technique.cpp.o
+.PHONY : src/technique/Impl/Technique.o
 
 # target to build an object file
-src/technique/IfConstexpr.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o
-.PHONY : src/technique/IfConstexpr.cpp.o
+src/technique/Impl/Technique.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o
+.PHONY : src/technique/Impl/Technique.cpp.o
 
-src/technique/IfConstexpr.i: src/technique/IfConstexpr.cpp.i
-.PHONY : src/technique/IfConstexpr.i
+src/technique/Impl/Technique.i: src/technique/Impl/Technique.cpp.i
+.PHONY : src/technique/Impl/Technique.i
 
 # target to preprocess a source file
-src/technique/IfConstexpr.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.i
-.PHONY : src/technique/IfConstexpr.cpp.i
+src/technique/Impl/Technique.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.i
+.PHONY : src/technique/Impl/Technique.cpp.i
 
-src/technique/IfConstexpr.s: src/technique/IfConstexpr.cpp.s
-.PHONY : src/technique/IfConstexpr.s
+src/technique/Impl/Technique.s: src/technique/Impl/Technique.cpp.s
+.PHONY : src/technique/Impl/Technique.s
 
 # target to generate assembly for a file
-src/technique/IfConstexpr.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.s
-.PHONY : src/technique/IfConstexpr.cpp.s
+src/technique/Impl/Technique.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.s
+.PHONY : src/technique/Impl/Technique.cpp.s
 
-src/technique/StructuredBindings.o: src/technique/StructuredBindings.cpp.o
-.PHONY : src/technique/StructuredBindings.o
+src/technique/Impl/TechniqueManager.o: src/technique/Impl/TechniqueManager.cpp.o
+.PHONY : src/technique/Impl/TechniqueManager.o
 
 # target to build an object file
-src/technique/StructuredBindings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o
-.PHONY : src/technique/StructuredBindings.cpp.o
+src/technique/Impl/TechniqueManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o
+.PHONY : src/technique/Impl/TechniqueManager.cpp.o
 
-src/technique/StructuredBindings.i: src/technique/StructuredBindings.cpp.i
-.PHONY : src/technique/StructuredBindings.i
-
-# target to preprocess a source file
-src/technique/StructuredBindings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.i
-.PHONY : src/technique/StructuredBindings.cpp.i
-
-src/technique/StructuredBindings.s: src/technique/StructuredBindings.cpp.s
-.PHONY : src/technique/StructuredBindings.s
-
-# target to generate assembly for a file
-src/technique/StructuredBindings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.s
-.PHONY : src/technique/StructuredBindings.cpp.s
-
-src/technique/TechniqueFactory.o: src/technique/TechniqueFactory.cpp.o
-.PHONY : src/technique/TechniqueFactory.o
-
-# target to build an object file
-src/technique/TechniqueFactory.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o
-.PHONY : src/technique/TechniqueFactory.cpp.o
-
-src/technique/TechniqueFactory.i: src/technique/TechniqueFactory.cpp.i
-.PHONY : src/technique/TechniqueFactory.i
+src/technique/Impl/TechniqueManager.i: src/technique/Impl/TechniqueManager.cpp.i
+.PHONY : src/technique/Impl/TechniqueManager.i
 
 # target to preprocess a source file
-src/technique/TechniqueFactory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.i
-.PHONY : src/technique/TechniqueFactory.cpp.i
+src/technique/Impl/TechniqueManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.i
+.PHONY : src/technique/Impl/TechniqueManager.cpp.i
 
-src/technique/TechniqueFactory.s: src/technique/TechniqueFactory.cpp.s
-.PHONY : src/technique/TechniqueFactory.s
-
-# target to generate assembly for a file
-src/technique/TechniqueFactory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.s
-.PHONY : src/technique/TechniqueFactory.cpp.s
-
-src/utils/InputHelper.o: src/utils/InputHelper.cpp.o
-.PHONY : src/utils/InputHelper.o
-
-# target to build an object file
-src/utils/InputHelper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o
-.PHONY : src/utils/InputHelper.cpp.o
-
-src/utils/InputHelper.i: src/utils/InputHelper.cpp.i
-.PHONY : src/utils/InputHelper.i
-
-# target to preprocess a source file
-src/utils/InputHelper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.i
-.PHONY : src/utils/InputHelper.cpp.i
-
-src/utils/InputHelper.s: src/utils/InputHelper.cpp.s
-.PHONY : src/utils/InputHelper.s
+src/technique/Impl/TechniqueManager.s: src/technique/Impl/TechniqueManager.cpp.s
+.PHONY : src/technique/Impl/TechniqueManager.s
 
 # target to generate assembly for a file
-src/utils/InputHelper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.s
-.PHONY : src/utils/InputHelper.cpp.s
+src/technique/Impl/TechniqueManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.s
+.PHONY : src/technique/Impl/TechniqueManager.cpp.s
 
 # Help Target
 help:
@@ -285,21 +237,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/menu/Menu.o"
-	@echo "... src/menu/Menu.i"
-	@echo "... src/menu/Menu.s"
-	@echo "... src/technique/IfConstexpr.o"
-	@echo "... src/technique/IfConstexpr.i"
-	@echo "... src/technique/IfConstexpr.s"
-	@echo "... src/technique/StructuredBindings.o"
-	@echo "... src/technique/StructuredBindings.i"
-	@echo "... src/technique/StructuredBindings.s"
-	@echo "... src/technique/TechniqueFactory.o"
-	@echo "... src/technique/TechniqueFactory.i"
-	@echo "... src/technique/TechniqueFactory.s"
-	@echo "... src/utils/InputHelper.o"
-	@echo "... src/utils/InputHelper.i"
-	@echo "... src/utils/InputHelper.s"
+	@echo "... src/technique/Impl/Menu.o"
+	@echo "... src/technique/Impl/Menu.i"
+	@echo "... src/technique/Impl/Menu.s"
+	@echo "... src/technique/Impl/Technique.o"
+	@echo "... src/technique/Impl/Technique.i"
+	@echo "... src/technique/Impl/Technique.s"
+	@echo "... src/technique/Impl/TechniqueManager.o"
+	@echo "... src/technique/Impl/TechniqueManager.i"
+	@echo "... src/technique/Impl/TechniqueManager.s"
 .PHONY : help
 
 

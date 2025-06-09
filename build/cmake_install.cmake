@@ -1,4 +1,4 @@
-# Install script for directory: /home/lethanhcong/Desktop/Code/Project
+# Install script for directory: /home/lethanhcong/Desktop/Code/OOP-teachique
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lethanhcong/Desktop/Code/Project/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lethanhcong/Desktop/Code/OOP-teachique/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

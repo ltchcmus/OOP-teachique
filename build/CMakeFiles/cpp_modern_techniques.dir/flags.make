@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/lethanhcong/Desktop/Code/Project/src
+CXX_INCLUDES = -I/home/lethanhcong/Desktop/Code/OOP-teachique/src
 
 CXX_FLAGS = -std=c++23
 

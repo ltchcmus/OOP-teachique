@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lethanhcong/Desktop/Code/Project
+CMAKE_SOURCE_DIR = /home/lethanhcong/Desktop/Code/OOP-teachique
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lethanhcong/Desktop/Code/Project/build
+CMAKE_BINARY_DIR = /home/lethanhcong/Desktop/Code/OOP-teachique/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cpp_modern_techniques.dir/depend.make
@@ -70,110 +70,78 @@ include CMakeFiles/cpp_modern_techniques.dir/progress.make
 include CMakeFiles/cpp_modern_techniques.dir/flags.make
 
 CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
-CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o: /home/lethanhcong/Desktop/Code/Project/src/main.cpp
+CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o: /home/lethanhcong/Desktop/Code/OOP-teachique/src/main.cpp
 CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o -c /home/lethanhcong/Desktop/Code/Project/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o -c /home/lethanhcong/Desktop/Code/OOP-teachique/src/main.cpp
 
 CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/Project/src/main.cpp > CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/OOP-teachique/src/main.cpp > CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.i
 
 CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/Project/src/main.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/OOP-teachique/src/main.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.s
 
-CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
-CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o: /home/lethanhcong/Desktop/Code/Project/src/menu/Menu.cpp
-CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o -c /home/lethanhcong/Desktop/Code/Project/src/menu/Menu.cpp
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o: /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Menu.cpp
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o -c /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Menu.cpp
 
-CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/Project/src/menu/Menu.cpp > CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.i
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Menu.cpp > CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.i
 
-CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/Project/src/menu/Menu.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.s
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Menu.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.s
 
-CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
-CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o: /home/lethanhcong/Desktop/Code/Project/src/technique/TechniqueFactory.cpp
-CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o -c /home/lethanhcong/Desktop/Code/Project/src/technique/TechniqueFactory.cpp
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o: /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/TechniqueManager.cpp
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o -c /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/TechniqueManager.cpp
 
-CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/Project/src/technique/TechniqueFactory.cpp > CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.i
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/TechniqueManager.cpp > CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.i
 
-CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/Project/src/technique/TechniqueFactory.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.s
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/TechniqueManager.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.s
 
-CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
-CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o: /home/lethanhcong/Desktop/Code/Project/src/technique/StructuredBindings.cpp
-CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o -c /home/lethanhcong/Desktop/Code/Project/src/technique/StructuredBindings.cpp
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o: /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Technique.cpp
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o -c /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Technique.cpp
 
-CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/Project/src/technique/StructuredBindings.cpp > CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.i
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Technique.cpp > CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.i
 
-CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/Project/src/technique/StructuredBindings.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.s
-
-CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
-CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o: /home/lethanhcong/Desktop/Code/Project/src/technique/IfConstexpr.cpp
-CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o -c /home/lethanhcong/Desktop/Code/Project/src/technique/IfConstexpr.cpp
-
-CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/Project/src/technique/IfConstexpr.cpp > CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.i
-
-CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/Project/src/technique/IfConstexpr.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.s
-
-CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o: CMakeFiles/cpp_modern_techniques.dir/flags.make
-CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o: /home/lethanhcong/Desktop/Code/Project/src/utils/InputHelper.cpp
-CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o: CMakeFiles/cpp_modern_techniques.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o -MF CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o.d -o CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o -c /home/lethanhcong/Desktop/Code/Project/src/utils/InputHelper.cpp
-
-CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lethanhcong/Desktop/Code/Project/src/utils/InputHelper.cpp > CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.i
-
-CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/Project/src/utils/InputHelper.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.s
+CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Technique.cpp -o CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.s
 
 # Object files for target cpp_modern_techniques
 cpp_modern_techniques_OBJECTS = \
 "CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o" \
-"CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o" \
-"CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o" \
-"CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o" \
-"CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o" \
-"CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o"
+"CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o" \
+"CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o" \
+"CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o"
 
 # External object files for target cpp_modern_techniques
 cpp_modern_techniques_EXTERNAL_OBJECTS =
 
 cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/main.cpp.o
-cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/menu/Menu.cpp.o
-cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/technique/TechniqueFactory.cpp.o
-cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/technique/StructuredBindings.cpp.o
-cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/technique/IfConstexpr.cpp.o
-cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o
+cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Menu.cpp.o
+cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o
+cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o
 cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/build.make
 cpp_modern_techniques: CMakeFiles/cpp_modern_techniques.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lethanhcong/Desktop/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable cpp_modern_techniques"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable cpp_modern_techniques"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp_modern_techniques.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,6 +153,6 @@ CMakeFiles/cpp_modern_techniques.dir/clean:
 .PHONY : CMakeFiles/cpp_modern_techniques.dir/clean
 
 CMakeFiles/cpp_modern_techniques.dir/depend:
-	cd /home/lethanhcong/Desktop/Code/Project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lethanhcong/Desktop/Code/Project /home/lethanhcong/Desktop/Code/Project /home/lethanhcong/Desktop/Code/Project/build /home/lethanhcong/Desktop/Code/Project/build /home/lethanhcong/Desktop/Code/Project/build/CMakeFiles/cpp_modern_techniques.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/lethanhcong/Desktop/Code/OOP-teachique/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lethanhcong/Desktop/Code/OOP-teachique /home/lethanhcong/Desktop/Code/OOP-teachique /home/lethanhcong/Desktop/Code/OOP-teachique/build /home/lethanhcong/Desktop/Code/OOP-teachique/build /home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles/cpp_modern_techniques.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cpp_modern_techniques.dir/depend
 
