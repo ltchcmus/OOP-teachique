@@ -2,12 +2,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
+#include <sstream>  
+#include <string>   
 #ifdef _WIN32
 #include <windows.h>
 #endif
 
 namespace {
-    // ANSI color codes
+    
     const char* CYAN = "\033[36m";
     const char* YELLOW = "\033[33m";
     const char* GREEN = "\033[32m";
