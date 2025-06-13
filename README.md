@@ -1,5 +1,18 @@
 # Dự án: Trình diễn các Kỹ thuật C++ Hiện đại (C++17 - C++23)
 
+# Thông tin sinh viên
+    MSSV: 23120222
+    Họ tên: Lê Thành Công
+    Tài khoản github: ltchcmus
+
+---
+
+# Lược đồ commit
+![Lược đồ commit](image.png)
+
+---
+
+# Nội dung sản phẩm
 ## 1. Giới thiệu
 Dự án này giúp trải nghiệm các kỹ thuật nổi bật của C++ hiện đại (từ C++17 đến C++23) qua giao diện dòng lệnh. Mỗi kỹ thuật đều có lý thuyết, ví dụ thực tế, giải thích chi tiết luồng chạy, và có thể chạy thử trực tiếp.
 
@@ -319,6 +332,11 @@ int main() {
 - Hệ điều hành: Linux (khuyến nghị Ubuntu 20.04+)
 - Trình biên dịch: g++ 9 trở lên (hỗ trợ C++17/C++20)
 - CMake >= 3.20
+    + Cài bằng lệnh:
+        ```bash 
+            sudo apt update
+            sudo apt install cmake
+        ```
 - Thư viện nlohmann_json (cài bằng: `sudo apt install nlohmann-json3-dev`)
 
 ### Các bước cài đặt và chạy
@@ -371,4 +389,4 @@ Các tính năng mới từ C++17 đến C++23 giúp C++ hiện đại, an toàn
 
 
 ---
-**Tác giả:** [Lê Thành Công] - ltchcmus@gmail.com
+
