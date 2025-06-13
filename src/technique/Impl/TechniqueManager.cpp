@@ -62,7 +62,7 @@ bool TechniqueManager::loadFromJson(const std::string& filename) {
     return true;
 }
 
-// Helper function to join vector<string> with separator
+
 std::string TechniqueManager::joinVector(const std::vector<std::string>& vec, const std::string& sep) {
     std::string result;
     for (size_t i = 0; i < vec.size(); ++i) {

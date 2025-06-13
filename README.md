@@ -1,12 +1,12 @@
 # Dự án: Trình diễn các Kỹ thuật C++ Hiện đại (C++17 - C++23)
 
 ## 1. Giới thiệu
-Dự án này giúp bạn học và trải nghiệm các kỹ thuật nổi bật của C++ hiện đại (từ C++17 đến C++23) qua giao diện dòng lệnh. Mỗi kỹ thuật đều có lý thuyết, ví dụ thực tế, giải thích chi tiết luồng chạy, và có thể chạy thử trực tiếp.
+Dự án này giúp trải nghiệm các kỹ thuật nổi bật của C++ hiện đại (từ C++17 đến C++23) qua giao diện dòng lệnh. Mỗi kỹ thuật đều có lý thuyết, ví dụ thực tế, giải thích chi tiết luồng chạy, và có thể chạy thử trực tiếp.
 
 ## 2. Mục tiêu
 - Hiểu rõ bản chất, ứng dụng thực tế của từng kỹ thuật C++ mới.
 - Thực hành code demo, quan sát kết quả và phân tích chi tiết luồng chạy.
-- Hỗ trợ học viên, sinh viên, lập trình viên nâng cao kỹ năng C++ hiện đại.
+
 
 ## 3. Danh sách 10 kỹ thuật nổi bật (C++17–C++23)
 
@@ -336,6 +336,9 @@ make
 ```
 
 ### Hướng dẫn sử dụng
+- Cài đặt thư viện ở phần yêu cầu hệ thống
+- Chạy lệnh chmod +x run.sh (Để cấp quyền cho file run.sh)
+- Run lệnh **./run.sh** để biên dịch chương trình
 - Chạy chương trình, chọn kỹ thuật muốn xem.
 - Xem lý thuyết, ví dụ, giải thích chi tiết luồng chạy.
 - Chọn "Run code demo" để chạy thử ví dụ và xem kết quả thực tế.
@@ -366,9 +369,6 @@ Các tính năng mới từ C++17 đến C++23 giúp C++ hiện đại, an toàn
 - Error handling rõ ràng, không cần exception.
 - Hỗ trợ functional programming, async programming, generic programming mạnh mẽ.
 
-**Khuyến nghị:**
-- Migrate dần dần, ưu tiên dùng các kỹ thuật mới cho code mới.
-- Đọc kỹ tài liệu, thực hành nhiều để hiểu sâu bản chất.
 
 ---
 **Tác giả:** [Lê Thành Công] - ltchcmus@gmail.com

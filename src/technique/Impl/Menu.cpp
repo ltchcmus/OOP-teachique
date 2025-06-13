@@ -64,17 +64,17 @@ void Menu::showTechniqueDetail(const Technique& tech) {
         const std::string thick_sep = "╠" + line + "╣";
         const std::string thick_bot = "╚" + line + "╝";
         std::cout << CYAN << thick_top << RESET << "\n";
-        // Title
+        
         std::cout << CYAN << "║" << RESET << BOLD << UNDERLINE << YELLOW << "  " << tech.getName() << RESET << "  (" << GREEN << tech.getCppVersion() << RESET << ")";
         size_t pad = line.size() - (tech.getName().size() + tech.getCppVersion().size() + 10);
         for (size_t i = 0; i < pad; ++i) std::cout << ' ';
         std::cout << CYAN << "║\n" << thick_mid << RESET << "\n";
-        // Definition
+    
         std::cout << CYAN << "║" << RESET << BOLD << MAGENTA << " Definition: " << RESET << tech.getDefinition();
         pad = line.size() - std::string(" Definition: ").size() - tech.getDefinition().size();
         for (size_t i = 0; i < pad; ++i) std::cout << ' ';
         std::cout << CYAN << "║\n";
-        // Use Cases
+   
         if (!tech.getUseCases().empty()) {
             std::cout << CYAN << "║" << RESET << BOLD << BLUE << " Use Cases:" << RESET;
             pad = line.size() - 11;
@@ -87,13 +87,13 @@ void Menu::showTechniqueDetail(const Technique& tech) {
                 std::cout << CYAN << "║\n";
             }
         }
-        // Syntax
+      
         std::cout << CYAN << "║" << RESET << BOLD << YELLOW << " Syntax: " << RESET << tech.getSyntax();
         pad = line.size() - std::string(" Syntax: ").size() - tech.getSyntax().size();
         for (size_t i = 0; i < pad; ++i) std::cout << ' ';
         std::cout << CYAN << "║\n";
         std::cout << CYAN << thick_sep << RESET << "\n";
-        // Code Demo
+        
         std::cout << CYAN << "║" << RESET << BOLD << UNDERLINE << RED << " Code Demo:" << RESET;
         pad = line.size() - 11;
         for (size_t i = 0; i < pad; ++i) std::cout << ' ';
@@ -106,7 +106,7 @@ void Menu::showTechniqueDetail(const Technique& tech) {
             for (size_t i = 0; i < pad; ++i) std::cout << ' ';
             std::cout << CYAN << "║\n";
         }
-        // Expected Output
+        
         if (!tech.getExpectedOutput().empty()) {
             std::cout << CYAN << "║" << RESET << BOLD << GREEN << " Expected Output:" << RESET;
             pad = line.size() - 17;
@@ -120,7 +120,7 @@ void Menu::showTechniqueDetail(const Technique& tech) {
                 std::cout << CYAN << "║\n";
             }
         }
-        // Best Practices
+        
         if (!tech.getBestPractices().empty()) {
             std::cout << CYAN << "║" << RESET << BOLD << MAGENTA << " Best Practices:" << RESET;
             pad = line.size() - 16;
@@ -133,7 +133,7 @@ void Menu::showTechniqueDetail(const Technique& tech) {
                 std::cout << CYAN << "║\n";
             }
         }
-        // Advantages
+        
         if (!tech.getAdvantages().empty()) {
             std::cout << CYAN << "║" << RESET << BOLD << YELLOW << " Advantages:" << RESET;
             pad = line.size() - 12;
@@ -146,7 +146,7 @@ void Menu::showTechniqueDetail(const Technique& tech) {
                 std::cout << CYAN << "║\n";
             }
         }
-        // Notes
+        
         if (!tech.getNotes().empty()) {
             std::istringstream notes_stream(tech.getNotes());
             while (std::getline(notes_stream, code_line)) {
@@ -156,7 +156,7 @@ void Menu::showTechniqueDetail(const Technique& tech) {
                 std::cout << CYAN << "║\n";
             }
         }
-        // Demo Note
+        
         if (!tech.getDemoNote().empty()) {
             std::istringstream demo_note_stream(tech.getDemoNote());
             while (std::getline(demo_note_stream, code_line)) {
