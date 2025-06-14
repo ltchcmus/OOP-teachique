@@ -69,115 +69,61 @@ void Menu::show() {
 void Menu::showTechniqueDetail(const Technique& tech) {
     while (true) {
         clearTerminal();
-        const std::string line = "════════════════════════════════════════════════════════════════════════════════════════════════";
-        const std::string thick_top = "╔" + line + "╗";
-        const std::string thick_mid = "╟" + line + "╢";
-        const std::string thick_sep = "╠" + line + "╣";
-        const std::string thick_bot = "╚" + line + "╝";
-        std::cout << CYAN << thick_top << RESET << "\n";
-        
-        std::cout << CYAN << "║" << RESET << BOLD << UNDERLINE << YELLOW << "  " << tech.getName() << RESET << "  (" << GREEN << tech.getCppVersion() << RESET << ")";
-        size_t pad = line.size() - (tech.getName().size() + tech.getCppVersion().size() + 10);
-        for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-        std::cout << CYAN << "║\n" << thick_mid << RESET << "\n";
+        std::cout << BOLD << UNDERLINE << YELLOW << "  " << tech.getName() << RESET << "  (" << GREEN << tech.getCppVersion() << RESET << ")\n";
     
-        std::cout << CYAN << "║" << RESET << BOLD << MAGENTA << " Definition: " << RESET << tech.getDefinition();
-        pad = line.size() - std::string(" Definition: ").size() - tech.getDefinition().size();
-        for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-        std::cout << CYAN << "║\n";
+        std::cout << BOLD << MAGENTA << " Definition: " << RESET << tech.getDefinition() << "\n";
    
         if (!tech.getUseCases().empty()) {
-            std::cout << CYAN << "║" << RESET << BOLD << BLUE << " Use Cases:" << RESET;
-            pad = line.size() - 11;
-            for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-            std::cout << CYAN << "║\n";
+            std::cout << BOLD << BLUE << " Use Cases:" << RESET << "\n";
             for (const auto& uc : tech.getUseCases()) {
-                std::cout << CYAN << "║   - " << RESET << uc;
-                pad = line.size() - 6 - uc.size();
-                for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-                std::cout << CYAN << "║\n";
+                std::cout << "  - " << RESET << uc << "\n";
             }
         }
       
-        std::cout << CYAN << "║" << RESET << BOLD << YELLOW << " Syntax: " << RESET << tech.getSyntax();
-        pad = line.size() - std::string(" Syntax: ").size() - tech.getSyntax().size();
-        for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-        std::cout << CYAN << "║\n";
-        std::cout << CYAN << thick_sep << RESET << "\n";
+        std::cout << BOLD << YELLOW << " Syntax: " << RESET << tech.getSyntax() << "\n";
         
-        std::cout << CYAN << "║" << RESET << BOLD << UNDERLINE << RED << " Code Demo:" << RESET;
-        pad = line.size() - 11;
-        for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-        std::cout << CYAN << "║\n";
+        std::cout << BOLD << UNDERLINE << RED << " Code Demo:" << RESET << "\n";
         std::istringstream code_stream(tech.getDemoCode());
         std::string code_line;
         while (std::getline(code_stream, code_line)) {
-            std::cout << CYAN << "║   " << RESET << code_line;
-            pad = line.size() - 3 - code_line.size();
-            for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-            std::cout << CYAN << "║\n";
+            std::cout << "  " << RESET << code_line << "\n";
         }
         
         if (!tech.getExpectedOutput().empty()) {
-            std::cout << CYAN << "║" << RESET << BOLD << GREEN << " Expected Output:" << RESET;
-            pad = line.size() - 17;
-            for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-            std::cout << CYAN << "║\n";
+            std::cout << BOLD << GREEN << " Expected Output:" << RESET << "\n";
             std::istringstream out_stream(tech.getExpectedOutput());
             while (std::getline(out_stream, code_line)) {
-                std::cout << CYAN << "║   " << RESET << GREEN << code_line << RESET;
-                pad = line.size() - 3 - code_line.size();
-                for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-                std::cout << CYAN << "║\n";
+                std::cout << "  " << RESET << GREEN << code_line << RESET << "\n";
             }
         }
         
         if (!tech.getBestPractices().empty()) {
-            std::cout << CYAN << "║" << RESET << BOLD << MAGENTA << " Best Practices:" << RESET;
-            pad = line.size() - 16;
-            for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-            std::cout << CYAN << "║\n";
+            std::cout << BOLD << MAGENTA << " Best Practices:" << RESET << "\n";
             for (const auto& bp : tech.getBestPractices()) {
-                std::cout << CYAN << "║   - " << RESET << bp;
-                pad = line.size() - 6 - bp.size();
-                for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-                std::cout << CYAN << "║\n";
+                std::cout << "  - " << RESET << bp << "\n";
             }
         }
         
         if (!tech.getAdvantages().empty()) {
-            std::cout << CYAN << "║" << RESET << BOLD << YELLOW << " Advantages:" << RESET;
-            pad = line.size() - 12;
-            for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-            std::cout << CYAN << "║\n";
+            std::cout << BOLD << YELLOW << " Advantages:" << RESET << "\n";
             for (const auto& adv : tech.getAdvantages()) {
-                std::cout << CYAN << "║   - " << RESET << adv;
-                pad = line.size() - 6 - adv.size();
-                for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-                std::cout << CYAN << "║\n";
+                std::cout << "  - " << RESET << adv << "\n";
             }
         }
         
         if (!tech.getNotes().empty()) {
             std::istringstream notes_stream(tech.getNotes());
             while (std::getline(notes_stream, code_line)) {
-                std::cout << CYAN << "║" << RESET << BOLD << BLUE << " Note: " << RESET << code_line;
-                pad = line.size() - 7 - code_line.size();
-                for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-                std::cout << CYAN << "║\n";
+                std::cout << BOLD << BLUE << " Note: " << RESET << code_line << "\n";
             }
         }
         
         if (!tech.getDemoNote().empty()) {
             std::istringstream demo_note_stream(tech.getDemoNote());
             while (std::getline(demo_note_stream, code_line)) {
-                std::cout << CYAN << "║" << RESET << BOLD << UNDERLINE << RED << " [Demo Note] " << RESET << code_line;
-                pad = line.size() - 13 - code_line.size();
-                for (size_t i = 0; i < pad; ++i) std::cout << ' ';
-                std::cout << CYAN << "║\n";
+                std::cout << BOLD << UNDERLINE << RED << " [Demo Note] " << RESET << code_line << "\n";
             }
         }
-        std::cout << CYAN << thick_bot << RESET << "\n";
         std::cout << "\n" << GREEN << "1. Run code demo" << RESET << "\n" << YELLOW << "0. Back to menu" << RESET << "\nSelect: ";
         int opt;
         std::cin >> opt;
