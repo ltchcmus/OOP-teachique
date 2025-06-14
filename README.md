@@ -8,7 +8,7 @@
 ---
 
 # Lược đồ commit
-![Lược đồ commit](image.png)
+![Lược đồ commit](commit.png)
 
 ---
 
@@ -326,31 +326,34 @@ int main() {
 
 ---
 
-## 5. Hướng dẫn cài đặt, build và chạy
+## 5. Video demo đồ án
+[video](https://youtu.be/D9DRW1USVPQ)
+
+Link dự phòng nếu không click được: https://youtu.be/D9DRW1USVPQ
+
+---
+## 6. Hướng dẫn cài đặt, build và chạy
 
 ### Yêu cầu hệ thống
 - Hệ điều hành: Linux (khuyến nghị Ubuntu 20.04+)
 - Trình biên dịch: g++ 9 trở lên (hỗ trợ C++17/C++20)
 - CMake >= 3.20
-    + Cài bằng lệnh:
-        ```bash 
-            sudo apt update
-            sudo apt install cmake
-        ```
-- Thư viện nlohmann_json (cài bằng: `sudo apt install nlohmann-json3-dev`)
+
+
 
 ### Các bước cài đặt và chạy
 ```bash
-# Clone project (nếu chưa có)
-git clone ...
-cd OOP-teachique
-# Tạo build và biên dịch
-mkdir -p build
-cd build
-cmake ..
-make
-# Chạy chương trình
-./cpp_modern_techniques
+#cài cmake
+sudo apt update
+sudo apt install cmake
+
+#cài thư viện nlohmann_json
+sudo apt install nlohmann-json3-dev
+
+#cài xong thì cd vào thư mục OOP-teachique và thực hiện
+
+chmod +x run.sh
+./run.sh
 ```
 
 ### Hướng dẫn sử dụng
@@ -363,7 +366,7 @@ make
 
 ---
 
-## 6. Best Practices, Migration Guide, Ứng dụng thực tế
+## 7. Best Practices, Migration Guide, Ứng dụng thực tế
 
 ### Migration Guide
 - **Từ C++14/17 sang C++20:** Concepts thay thế SFINAE, Ranges thay thế algorithm + iterator.
@@ -379,7 +382,7 @@ make
 
 ---
 
-## 7. Kết luận
+## 8. Kết luận
 
 Các tính năng mới từ C++17 đến C++23 giúp C++ hiện đại, an toàn, hiệu quả hơn:
 - Code rõ ràng, dễ bảo trì, ít lỗi.
@@ -388,5 +391,6 @@ Các tính năng mới từ C++17 đến C++23 giúp C++ hiện đại, an toàn
 - Hỗ trợ functional programming, async programming, generic programming mạnh mẽ.
 
 
----
+**Lưu ý:** Em viết trên linux xử dụng virtual box để chạy máy ảo nên sẽ quay video trên hình nền chính của hệ điều hành linux ạ
 
+---
