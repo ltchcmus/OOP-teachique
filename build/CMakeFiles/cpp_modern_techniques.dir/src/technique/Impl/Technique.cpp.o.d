@@ -1,7 +1,7 @@
 CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/Technique.cpp.o: \
- /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/Technique.cpp \
+ /home/lethanhcong/Desktop/temp/OOP-teachique/src/technique/Impl/Technique.cpp \
  /usr/include/stdc-predef.h \
- /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/../Header/Technique.h \
+ /home/lethanhcong/Desktop/temp/OOP-teachique/src/technique/Impl/../Header/Technique.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

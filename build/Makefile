@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lethanhcong/Desktop/Code/OOP-teachique
+CMAKE_SOURCE_DIR = /home/lethanhcong/Desktop/temp/OOP-teachique
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lethanhcong/Desktop/Code/OOP-teachique/build
+CMAKE_BINARY_DIR = /home/lethanhcong/Desktop/temp/OOP-teachique/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles /home/lethanhcong/Desktop/Code/OOP-teachique/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lethanhcong/Desktop/temp/OOP-teachique/build/CMakeFiles /home/lethanhcong/Desktop/temp/OOP-teachique/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lethanhcong/Desktop/Code/OOP-teachique/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lethanhcong/Desktop/temp/OOP-teachique/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -225,6 +225,30 @@ src/technique/Impl/TechniqueManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.s
 .PHONY : src/technique/Impl/TechniqueManager.cpp.s
 
+src/utils/InputHelper.o: src/utils/InputHelper.cpp.o
+.PHONY : src/utils/InputHelper.o
+
+# target to build an object file
+src/utils/InputHelper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.o
+.PHONY : src/utils/InputHelper.cpp.o
+
+src/utils/InputHelper.i: src/utils/InputHelper.cpp.i
+.PHONY : src/utils/InputHelper.i
+
+# target to preprocess a source file
+src/utils/InputHelper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.i
+.PHONY : src/utils/InputHelper.cpp.i
+
+src/utils/InputHelper.s: src/utils/InputHelper.cpp.s
+.PHONY : src/utils/InputHelper.s
+
+# target to generate assembly for a file
+src/utils/InputHelper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_modern_techniques.dir/build.make CMakeFiles/cpp_modern_techniques.dir/src/utils/InputHelper.cpp.s
+.PHONY : src/utils/InputHelper.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,6 +270,9 @@ help:
 	@echo "... src/technique/Impl/TechniqueManager.o"
 	@echo "... src/technique/Impl/TechniqueManager.i"
 	@echo "... src/technique/Impl/TechniqueManager.s"
+	@echo "... src/utils/InputHelper.o"
+	@echo "... src/utils/InputHelper.i"
+	@echo "... src/utils/InputHelper.s"
 .PHONY : help
 
 

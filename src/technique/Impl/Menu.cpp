@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>  
 #include <string>   
+#include <filesystem>
 #ifdef _WIN32
 #include <windows.h>
 #endif
@@ -29,6 +30,10 @@ namespace {
         }
     #endif
     }
+
+    std::string getExecutablePath() {
+        return std::filesystem::current_path().string();
+    }
 }
 
 Menu::Menu(TechniqueManager& manager) : manager(manager) {
@@ -36,7 +41,11 @@ Menu::Menu(TechniqueManager& manager) : manager(manager) {
 }
 
 void Menu::clearTerminal() const {
+#ifdef _WIN32
+    std::system("cls");
+#else
     std::system("clear");
+#endif
 }
 
 void Menu::show() {
@@ -184,7 +193,24 @@ void Menu::runDemo(const Technique& tech) {
     ofs << tech.getDemoCode();
     ofs.close();
     std::cout << CYAN << "Compiling and running demo..." << RESET << "\n";
-    int compile = std::system(("g++ " + filename + " -o demo_temp.out 2> demo_temp.err").c_str());
+
+    // Tự động chọn chuẩn C++ phù hợp
+    std::string std_flag = "-std=c++17";
+    std::string code = tech.getDemoCode();
+    if (code.find("#include <coroutine>") != std::string::npos ||
+        code.find("#include <concepts>") != std::string::npos ||
+        code.find("#include <ranges>") != std::string::npos ||
+        code.find("<=>") != std::string::npos ||
+        code.find("concept ") != std::string::npos) {
+        std_flag = "-std=c++20";
+    }
+    if (code.find("this Self&&") != std::string::npos ||
+        code.find("#include <expected>") != std::string::npos ||
+        code.find(",") != std::string::npos) { // C++23 features
+        std_flag = "-std=c++23";
+    }
+
+    int compile = std::system(("g++ " + filename + " " + std_flag + " -o demo_temp.out 2> demo_temp.err").c_str());
     if (compile != 0) {
         std::ifstream err("demo_temp.err");
         std::cout << RED << "[Compilation Error]\n" << err.rdbuf() << RESET << std::endl;

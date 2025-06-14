@@ -1,7 +1,7 @@
 CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o: \
- /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/TechniqueManager.cpp \
+ /home/lethanhcong/Desktop/temp/OOP-teachique/src/technique/Impl/TechniqueManager.cpp \
  /usr/include/stdc-predef.h \
- /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/../Header/TechniqueManager.h \
+ /home/lethanhcong/Desktop/temp/OOP-teachique/src/technique/Impl/../Header/TechniqueManager.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -126,7 +126,7 @@ CMakeFiles/cpp_modern_techniques.dir/src/technique/Impl/TechniqueManager.cpp.o: 
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/13/bits/charconv.h \
  /usr/include/c++/13/bits/basic_string.tcc \
- /home/lethanhcong/Desktop/Code/OOP-teachique/src/technique/Impl/../Header/Technique.h \
+ /home/lethanhcong/Desktop/temp/OOP-teachique/src/technique/Impl/../Header/Technique.h \
  /usr/include/c++/13/fstream /usr/include/c++/13/istream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \
