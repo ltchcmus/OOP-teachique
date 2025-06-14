@@ -350,7 +350,7 @@ sudo apt install cmake
 #cài thư viện nlohmann_json
 sudo apt install nlohmann-json3-dev
 
-#cài xong thì cd vào thư mục OOP-teachique và thực hiện
+#cài xong thì cd vào thư mục 23120222 và thực hiện
 
 chmod +x run.sh
 ./run.sh
